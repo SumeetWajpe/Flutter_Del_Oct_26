@@ -27,3 +27,13 @@ void main(List<String> args) {
 void printBook(String author, String title, [int numOfPages = 0]) {
   print('$author,$title,$numOfPages');
 }
+
+int Add(int x, int y) {
+  return x + y;
+}
+
+// OR
+// Arrow functions / Lambdas
+int add({required int x, required int y}) => x + y;
+
+void printBookArrow(String author, String title) => print('$author,$title');
