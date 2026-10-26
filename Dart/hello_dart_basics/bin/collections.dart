@@ -14,4 +14,10 @@ void main(List<String> args) {
   // Set - Unordered coll of unique items
   Set<String> cars = {"BMW", "AUDI", "MERC", "AUDI"};
   print(cars);
+
+  // Map - Key/value
+  Map<String, String> cityWithPins = {"Pune": "410502", "Nagpur": "440022"};
+  print(cityWithPins["Pune"]);
+  var cities = cityWithPins.keys.toList();
+  print(cities);
 }
