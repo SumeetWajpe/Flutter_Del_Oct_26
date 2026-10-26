@@ -1,7 +1,8 @@
 void main(List<String> args) {
   // printBook("Dr. APJ Abdul Kalam", "Wings of fire");
   // printBook(title: "Radhey", author: "Ranjit Desai");
-  printBook("Dr. APJ Abdul Kalam", "Wings of fire");
+  // printBook("Dr. APJ Abdul Kalam", "Wings of fire");
+  printBookArrow("Dr. APJ Abdul Kalam", "Wings of fire");
 }
 
 // Basic function
@@ -36,4 +37,4 @@ int Add(int x, int y) {
 // Arrow functions / Lambdas
 int add({required int x, required int y}) => x + y;
 
-void printBookArrow(String author, String title) => print('$author,$title');
+void printBookArrow(String author, String title) => print(author);
