@@ -16,6 +16,10 @@ void main(List<String> arguments) {
   // PI = 3.1455656; // Error !
 
   // const PI; // Error (must be initialized)
-
-  
+  // Difference - final is a runtime constant & const is a compile time constant
+  // final
+  final d;
+  d = DateTime.now();
+  // 100 lines of code
+  // d = DateTime.now(); // Error !
 }
