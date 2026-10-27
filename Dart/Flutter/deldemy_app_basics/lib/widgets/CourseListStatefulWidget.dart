@@ -72,23 +72,18 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
               listofcourses[index].subtitle!,
               style: const TextStyle(fontSize: 15, color: Colors.grey),
             ),
-            trailing: Column(
-              children: [
-                InkWell(
-                  child: const Icon(
-                    Icons.thumb_up_alt_outlined,
-                    size: 25,
-                    color: Color.fromARGB(255, 129, 73, 189),
-                  ),
-                  onTap: () {
-                    // to increment the likes
-                  },
-                ),
-                Text(
-                  listofcourses[index].likes.toString(),
-                  style: TextStyle(fontSize: 14),
-                ),
-              ],
+            trailing: InkWell(
+              child: const Icon(
+                Icons.delete,
+                color: Color.fromARGB(255, 218, 64, 53),
+              ),
+              onTap: () {
+                // delete the course ??
+
+                setState(() {
+                  listofcourses.removeAt(index);
+                });
+              },
             ),
           ),
         );
@@ -96,3 +91,25 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
     );
   }
 }
+
+//  trailing: Column(
+//               children: [
+//                 InkWell(
+//                   child: const Icon(
+//                     Icons.thumb_up_alt_outlined,
+//                     size: 25,
+//                     color: Color.fromARGB(255, 129, 73, 189),
+//                   ),
+//                   onTap: () {
+//                     // to increment the likes
+//                     setState(() {
+//                       listofcourses[index].likes += 1;
+//                     });
+//                   },
+//                 ),
+//                 Text(
+//                   listofcourses[index].likes.toString(),
+//                   style: TextStyle(fontSize: 14),
+//                 ),
+//               ],
+//             ),
