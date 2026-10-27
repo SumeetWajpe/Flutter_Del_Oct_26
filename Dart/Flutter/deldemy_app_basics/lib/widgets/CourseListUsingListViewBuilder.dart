@@ -9,6 +9,7 @@ class CourseListUsingListViewBuilder extends StatelessWidget {
       "React",
       "A JS library",
       100,
+      5,
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/3840px-React-icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     ),
     CourseModel(
@@ -16,6 +17,7 @@ class CourseListUsingListViewBuilder extends StatelessWidget {
       "Node",
       "A Server FX",
       200,
+      5,
       "https://miro.medium.com/v2/resize:fit:800/1*bc9pmTiyKR0WNPka2w3e0Q.png",
     ),
     CourseModel(
@@ -23,6 +25,7 @@ class CourseListUsingListViewBuilder extends StatelessWidget {
       "Angular",
       "A JS FX",
       500,
+      4,
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     ),
     CourseModel(
@@ -30,6 +33,7 @@ class CourseListUsingListViewBuilder extends StatelessWidget {
       "Flutter",
       "A Cross Platform solution",
       200,
+      3,
       "https://cdn-images-1.medium.com/max/1200/1*5-aoK8IBmXve5whBQM90GA.png",
     ),
     CourseModel(
@@ -37,6 +41,7 @@ class CourseListUsingListViewBuilder extends StatelessWidget {
       "MongoDB",
       "A document based DB",
       200,
+      4,
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s",
     ),
   ];

@@ -1,4 +1,5 @@
 import 'package:deldemy_app_basics/models/course.model.dart';
+import 'package:deldemy_app_basics/widgets/Rating.dart';
 import 'package:flutter/material.dart';
 
 class CourseListStatefulWidget extends StatefulWidget {
@@ -16,6 +17,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
       "React",
       "A JS library",
       100,
+      4,
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/3840px-React-icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     ),
     CourseModel(
@@ -23,6 +25,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
       "Node",
       "A Server FX",
       200,
+      3,
       "https://miro.medium.com/v2/resize:fit:800/1*bc9pmTiyKR0WNPka2w3e0Q.png",
     ),
     CourseModel(
@@ -30,6 +33,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
       "Angular",
       "A JS FX",
       500,
+      4,
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Angular_gradient_logo.png/960px-Angular_gradient_logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
     ),
     CourseModel(
@@ -37,6 +41,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
       "Flutter",
       "A Cross Platform solution",
       200,
+      5,
       "https://cdn-images-1.medium.com/max/1200/1*5-aoK8IBmXve5whBQM90GA.png",
     ),
     CourseModel(
@@ -44,6 +49,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
       "MongoDB",
       "A document based DB",
       200,
+      3,
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s",
     ),
   ];
@@ -81,16 +87,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
                 listofcourses[index].subtitle!,
                 style: const TextStyle(fontSize: 15, color: Colors.grey),
               ),
-              trailing: InkWell(
-                child: const Icon(
-                  Icons.delete,
-                  color: Color.fromARGB(255, 218, 64, 53),
-                ),
-                onTap: () {
-                  // delete the course ??
-                  deleteACourse(index);
-                },
-              ),
+              trailing: Rating(rating: listofcourses[index].rating!),
             ),
           ),
         );
@@ -120,3 +117,15 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
 //                 ),
 //               ],
 //             ),
+
+
+// trailing: InkWell(
+//                 child: const Icon(
+//                   Icons.delete,
+//                   color: Color.fromARGB(255, 218, 64, 53),
+//                 ),
+//                 onTap: () {
+//                   // delete the course ??
+//                   deleteACourse(index);
+//                 },
+//               ),
