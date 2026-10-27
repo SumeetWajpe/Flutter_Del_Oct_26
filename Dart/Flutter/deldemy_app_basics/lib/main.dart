@@ -1,3 +1,4 @@
+import 'package:deldemy_app_basics/widgets/CourseListUsingListViewBuilder.dart';
 import 'package:deldemy_app_basics/widgets/CourseListUsingRowsAndCol.dart';
 import 'package:deldemy_app_basics/widgets/BasicListViewWidgetCourseList.dart';
 import 'package:deldemy_app_basics/widgets/CourseListWithListTile.dart';
@@ -15,7 +16,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: Courselistwithlisttile()),
+      home: Scaffold(body: CourseListUsingListViewBuilder()),
     );
   }
 }
