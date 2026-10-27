@@ -47,43 +47,50 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s",
     ),
   ];
+  void deleteACourse(int index) {
+    setState(() {
+      listofcourses.removeAt(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: listofcourses.length,
       itemBuilder: (context, index) {
-        return Card(
-          elevation: 15,
-          margin: EdgeInsets.only(bottom: 10),
-          child: ListTile(
-            leading: Image(
-              image: NetworkImage(listofcourses[index].imageUrl!),
-              width: 100,
-            ),
-            title: Text(
-              listofcourses[index].title!,
-              style: TextStyle(
-                fontSize: 20,
-                color: Color.fromARGB(255, 12, 12, 12),
+        return GestureDetector(
+          onHorizontalDragEnd: (_) {
+            deleteACourse(index);
+          },
+          child: Card(
+            elevation: 15,
+            margin: EdgeInsets.only(bottom: 10),
+            child: ListTile(
+              leading: Image(
+                image: NetworkImage(listofcourses[index].imageUrl!),
+                width: 100,
               ),
-            ),
-            subtitle: Text(
-              listofcourses[index].subtitle!,
-              style: const TextStyle(fontSize: 15, color: Colors.grey),
-            ),
-            trailing: InkWell(
-              child: const Icon(
-                Icons.delete,
-                color: Color.fromARGB(255, 218, 64, 53),
+              title: Text(
+                listofcourses[index].title!,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 12, 12, 12),
+                ),
               ),
-              onTap: () {
-                // delete the course ??
-
-                setState(() {
-                  listofcourses.removeAt(index);
-                });
-              },
+              subtitle: Text(
+                listofcourses[index].subtitle!,
+                style: const TextStyle(fontSize: 15, color: Colors.grey),
+              ),
+              trailing: InkWell(
+                child: const Icon(
+                  Icons.delete,
+                  color: Color.fromARGB(255, 218, 64, 53),
+                ),
+                onTap: () {
+                  // delete the course ??
+                  deleteACourse(index);
+                },
+              ),
             ),
           ),
         );
