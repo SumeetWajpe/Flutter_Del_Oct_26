@@ -35,32 +35,64 @@ class MyColumns extends StatelessWidget {
     //   ],
     // );
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Container(
-          color: Colors.amber,
-          height: 100,
-          width: 100,
-          margin: EdgeInsets.all(20),
-          child: Text("Row 1"),
-        ),
-        Container(
-          color: Colors.blue,
-          height: 70,
-          width: 70,
-          margin: EdgeInsets.all(20),
-          child: Text("Row 2"),
-        ),
-        Container(
-          color: Colors.teal,
-          height: 70,
-          width: 70,
-          margin: EdgeInsets.all(20),
-          child: Text("Row 3"),
-        ),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            color: Colors.amber,
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            child: Text("Row 1"),
+          ),
+          Container(
+            color: Colors.blue,
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            child: Text("Row 2"),
+          ),
+          Container(
+            color: Colors.teal,
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            child: Text("Row 3"),
+          ),
+          Container(
+            color: Colors.teal,
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            child: Text("Row 3"),
+          ),
+          Container(
+            color: Colors.teal,
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            child: Text("Row 3"),
+          ),
+          Container(
+            color: Colors.teal,
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            child: Text("Row 3"),
+          ),
+
+          Container(
+            color: Colors.teal,
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            child: Text("Row 3"),
+          ),
+        ],
+      ),
     );
   }
 }
