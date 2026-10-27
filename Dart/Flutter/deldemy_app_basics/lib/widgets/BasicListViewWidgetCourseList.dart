@@ -14,9 +14,16 @@ class BasicListViewWidgetCourseList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: EdgeInsets.all(10),
+
       children: <Widget>[
         ...listofcourses.map(
-          (String course) => Text(course, style: TextStyle(fontSize: 30)),
+          (String course) => ListTile(
+            leading: Image(image: AssetImage("assets/images/react.png")),
+            title: Text(course),
+            subtitle: Text("Learn new things!"),
+            trailing: Text("Delete", style: TextStyle(color: Colors.red)),
+          ),
         ),
       ],
     );
