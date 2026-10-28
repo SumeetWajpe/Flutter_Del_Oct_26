@@ -1,3 +1,4 @@
+import 'package:deldemy_app_basics/screens/AddNewCourse.dart';
 import 'package:deldemy_app_basics/widgets/CourseListStatefulWidget.dart';
 import 'package:deldemy_app_basics/widgets/TotalCourses.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,17 @@ class DeldemyApp extends StatelessWidget {
           Expanded(child: CourseListStatefulWidget()),
           TotalCourses(),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // navigate to AddNewCourseScreen
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddNewCourse()),
+          );
+        },
+        backgroundColor: Colors.purple,
+        child: Icon(Icons.add, color: Colors.white),
       ),
     );
   }

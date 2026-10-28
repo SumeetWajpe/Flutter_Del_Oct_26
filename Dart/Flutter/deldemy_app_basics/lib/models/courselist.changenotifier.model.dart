@@ -59,5 +59,7 @@ class CourseListNotifier extends ChangeNotifier {
 
   void deleteACourse(int index) {
     print("Deleting the course - (index) : $index");
+    listofcourses.removeAt(index);
+    notifyListeners();
   }
 }
