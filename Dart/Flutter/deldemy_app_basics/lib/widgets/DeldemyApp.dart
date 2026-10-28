@@ -1,4 +1,5 @@
 import 'package:deldemy_app_basics/widgets/CourseListStatefulWidget.dart';
+import 'package:deldemy_app_basics/widgets/TotalCourses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,7 +14,12 @@ class DeldemyApp extends StatelessWidget {
         centerTitle: true,
         title: Text("Deldemy App", style: TextStyle(color: Colors.white)),
       ),
-      body: CourseListStatefulWidget(),
+      body: Column(
+        children: [
+          Expanded(child: CourseListStatefulWidget()),
+          TotalCourses(),
+        ],
+      ),
     );
   }
 }

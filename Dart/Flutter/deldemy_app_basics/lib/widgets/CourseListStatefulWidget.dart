@@ -14,8 +14,6 @@ class CourseListStatefulWidget extends StatefulWidget {
 }
 
 class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
-  void deleteACourse(int index) {}
-
   @override
   Widget build(BuildContext context) {
     return Consumer<CourseListNotifier>(
@@ -24,7 +22,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onHorizontalDragEnd: (_) {
-              deleteACourse(index);
+              courselistChangeNotifierInstance.deleteACourse(index);
             },
             child: Card(
               elevation: 15,
