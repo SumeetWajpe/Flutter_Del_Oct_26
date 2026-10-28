@@ -2,7 +2,7 @@ class CourseModel {
   final int id;
   final String? title;
   final String? subtitle;
-  int? likes;
+  int likes;
   final String? imageUrl;
   final String? description;
   final int? rating;
