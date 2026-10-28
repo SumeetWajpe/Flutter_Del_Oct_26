@@ -1,6 +1,8 @@
 import 'package:deldemy_app_basics/models/course.model.dart';
+import 'package:deldemy_app_basics/models/courselist.changenotifier.model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 
 class AddNewCourse extends StatefulWidget {
   @override
@@ -182,7 +184,12 @@ class _AddNewCourseState extends State<AddNewCourse> {
       _subtitlesList,
       _trainer,
     );
-    print(newCourse.title);
+
+    Provider.of<CourseListNotifier>(
+      context,
+      listen: false,
+    ).addNewCourse(newCourse);
+    Navigator.pop(context);
   }
 
   @override
