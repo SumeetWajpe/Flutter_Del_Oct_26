@@ -100,5 +100,9 @@ class CourseBloc extends Bloc<CourseEvent, CourseState> {
   void _deleteCourse(DeleteCourseEvent event, Emitter<CourseState> emit) {
     // logix to increment the likes
     print("Deleting..");
+    final updatedCourses = state.courses
+        .where((course) => course.id != event.courseId)
+        .toList();
+    emit(CourseState(courses: updatedCourses));
   }
 }
