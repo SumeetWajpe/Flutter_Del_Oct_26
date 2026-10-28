@@ -18,7 +18,14 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: CourseListStatefulWidget()),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+          centerTitle: true,
+          title: Text("Deldemy App", style: TextStyle(color: Colors.white)),
+        ),
+        body: CourseListStatefulWidget(),
+      ),
     );
   }
 }
