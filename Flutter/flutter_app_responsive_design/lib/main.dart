@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_responsive_design/desktopBody.dart';
+import 'package:flutter_app_responsive_design/home.dart';
 import 'package:flutter_app_responsive_design/mobileBody.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: MobileBody(),
+      home: Home(),
     );
   }
 }
