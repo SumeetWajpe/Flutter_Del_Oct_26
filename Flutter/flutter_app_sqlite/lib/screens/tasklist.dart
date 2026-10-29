@@ -29,6 +29,11 @@ class _TaskListState extends State<TaskList> {
     });
   }
 
+  void _deleteTask(int id) async {
+    await dbHelper.deleteTask(id);
+    _refereshTaskList();
+  }
+
   void _addtask() async {
     if (titleController.text.isEmpty) return;
     await dbHelper.insertTask(
@@ -80,6 +85,20 @@ class _TaskListState extends State<TaskList> {
                   return ListTile(
                     title: Text(task.title),
                     subtitle: Text(task.description!),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            _deleteTask(task.id!);
+                          },
+                          icon: Icon(
+                            Icons.delete,
+                            semanticLabel: "Delete task ${task.title}",
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 },
               ),

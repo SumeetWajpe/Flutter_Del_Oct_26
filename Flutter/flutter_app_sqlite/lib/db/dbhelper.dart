@@ -44,4 +44,9 @@ CREATE TABLE tasks(
     Database db = await instance.database;
     return await db.insert('tasks', task.toMap());
   }
+
+  Future<int> deleteTask(int id) async {
+    Database db = await instance.database;
+    return await db.delete('tasks', where: 'id = ?', whereArgs: [id]);
+  }
 }
