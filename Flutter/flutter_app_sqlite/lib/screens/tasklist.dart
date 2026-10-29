@@ -48,6 +48,18 @@ class _TaskListState extends State<TaskList> {
     _refereshTaskList();
   }
 
+  void _toggelTaskStatus(Task task) async {
+    Task updatedTask = Task(
+      id: task.id,
+      title: task.title,
+      description: task.description,
+      isCompleted: !task.isCompleted,
+      createdAt: task.createdAt,
+    );
+    await dbHelper.updateTask(updatedTask);
+    _refereshTaskList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,11 +95,29 @@ class _TaskListState extends State<TaskList> {
                 itemBuilder: (context, index) {
                   Task task = tasks[index];
                   return ListTile(
-                    title: Text(task.title),
+                    title: Text(
+                      task.title,
+                      style: TextStyle(
+                        decoration: task.isCompleted
+                            ? TextDecoration.lineThrough
+                            : null,
+                      ),
+                    ),
                     subtitle: Text(task.description!),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
+                        IconButton(
+                          onPressed: () {
+                            _toggelTaskStatus(task);
+                          },
+                          icon: Icon(
+                            task.isCompleted
+                                ? Icons.check_box
+                                : Icons.check_box_outline_blank,
+                          ),
+                        ),
+
                         IconButton(
                           onPressed: () {
                             _deleteTask(task.id!);
