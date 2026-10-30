@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -54,13 +56,35 @@ class _TakePictureScreenState extends State<TakePictureScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          final image = await _controller.takePicture();
+          try {
+            final image = await _controller.takePicture();
 
-          if (!context.mounted) return;
-          
+            if (!context.mounted) return;
+            await Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) =>
+                    DisplayPictureScreen(imagePath: image.path),
+              ),
+            );
+          } catch (e) {
+            print(e);
+          }
         },
         child: const Icon(Icons.camera_alt),
       ),
+    );
+  }
+}
+
+class DisplayPictureScreen extends StatelessWidget {
+  final String imagePath;
+  const DisplayPictureScreen({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Display the picture")),
+      body: Image.file(File(imagePath)),
     );
   }
 }
