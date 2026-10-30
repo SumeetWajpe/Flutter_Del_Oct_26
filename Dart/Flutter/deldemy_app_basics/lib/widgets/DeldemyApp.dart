@@ -11,9 +11,12 @@ class DeldemyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: const Color.fromARGB(255, 163, 49, 208),
         centerTitle: true,
-        title: Text("Deldemy App", style: TextStyle(color: Colors.white)),
+        title: Text(
+          "Deldemy App",
+          style: TextStyle(color: const Color.fromARGB(255, 246, 246, 244)),
+        ),
       ),
       body: Column(
         children: [
@@ -30,7 +33,10 @@ class DeldemyApp extends StatelessWidget {
           );
         },
         backgroundColor: Colors.purple,
-        child: Icon(Icons.add, color: Colors.white),
+        child: Semantics(
+          label: "Add New Course",
+          child: Icon(Icons.add, color: Colors.white),
+        ),
       ),
     );
   }

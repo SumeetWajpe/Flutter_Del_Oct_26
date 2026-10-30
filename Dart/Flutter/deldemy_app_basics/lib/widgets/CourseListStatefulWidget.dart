@@ -26,6 +26,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
             },
             child: Card(
               elevation: 15,
+
               margin: EdgeInsets.only(bottom: 10),
               child: ListTile(
                 leading: GestureDetector(
@@ -39,13 +40,18 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
                       ),
                     );
                   },
-                  child: Image(
-                    image: NetworkImage(
-                      courselistChangeNotifierInstance
-                          .listofcourses[index]
-                          .imageUrl!,
+                  child: Semantics(
+                    label: courselistChangeNotifierInstance
+                        .listofcourses[index]
+                        .title,
+                    child: Image(
+                      image: NetworkImage(
+                        courselistChangeNotifierInstance
+                            .listofcourses[index]
+                            .imageUrl!,
+                      ),
+                      width: 100,
                     ),
-                    width: 100,
                   ),
                 ),
                 title: Text(
@@ -65,6 +71,7 @@ class _CourseListStatefulWidgetState extends State<CourseListStatefulWidget> {
                   children: [
                     InkWell(
                       child: const Icon(
+                        semanticLabel: "Thums Up Icon",
                         Icons.thumb_up_alt_outlined,
                         size: 25,
                         color: Color.fromARGB(255, 129, 73, 189),
